@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Currency</title>
+    <style>
+        .fix{
+            text-align: left;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+
+<table style="width: 50%">
+    <tr>
+        <th class="fix">Amount</th>
+        <th class="fix">From Currency</th>
+        <th class="fix">To Currency</th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td><input id="number" type="text" name="number"></td>
+        <td><select name="select1" id="select1">
+            <option value="" disabled selected>-- Choose --</option>
+            <option value="vnd">VietNam</option>
+            <option value="usd">USD</option>
+        </select></td>
+        <td><select name="select2" id="select2">
+            <option value="" disabled selected>-- Choose --</option>
+            <option value="usd">USD</option>
+            <option value="vnd">VietNam</option>
+        </select></td>
+        <td><button id="convert" onclick="convertCurrency()">Convert</button>
+            <br>
+            <input type="reset" value="re-mthfk-set">
+        </td>
+    </tr>
+    <tr>
+        <td id="result">Result: </td>
+    </tr>
+</table>
+
+
+<script>
+
+    function convertCurrency() {
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+        let input = document.getElementById('number').value;
+        let money;
+        if(select1 === "vnd" && select2 === "usd") {
+            money = Math.round(parseInt(input) / 23000);
+            document.getElementById('result').innerText = document.getElementById('result').innerText + " $" + money;
+        } if (select1 === "usd" && select2 === "vnd") {
+            money = parseInt(input) * 23000;
+            document.getElementById('result').innerText = document.getElementById('result').innerText + ' ' + money + " VND";
+        }
+
+
+    }
+
+
+</script>
+</body>
+</html>
