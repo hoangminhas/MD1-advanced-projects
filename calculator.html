@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung may tinh</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <input id="input1" type="text" value="">
+  <input id="input2" type="text"><br><br>
+  <button id="add" onclick="addi()">Addition(+)</button>
+  <button id="sub" onclick="subt()" type="submit">Subtraction(-)</button>
+  <button id="mul" onclick="mult()" type="submit">Multiplication(*)</button>
+  <button id="div" onclick="divi()" type="submit">Division(/)</button>
+  <input type="reset" onclick="res3t()" value="reset">
+  <h2 id="result">Result = </h2>
+
+<script>
+
+  function res3t(){
+    document.getElementById('input1').value = " ";
+    document.getElementById('input2').value = " ";
+    document.getElementById("result").innerText = "Result = ";
+  }
+
+  function addi(){
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let result = parseInt(input1) + parseInt(input2);
+    document.getElementById("result").innerText = "Result = " + result;
+  }
+  function subt(){
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let result = input1 - input2;
+    document.getElementById("result").innerText = "Result = " + result;
+  }
+  function mult(){
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let result = input1 * input2;
+    document.getElementById("result").innerText = "Result = " + result;
+  }
+  function divi(){
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let result = input1 / input2;
+    document.getElementById("result").innerText = "Result = " + result;
+  }
+
+</script>
+</body>
+</html>
