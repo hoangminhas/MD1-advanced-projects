@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung may tinh nang cao</title>
+</head>
+<body>
+<table style="">
+    <tr>
+        <td colspan="4"><input id="result" type="text" name="text"></td>
+    </tr>
+    <tr>
+        <td><button onclick="popUp('(')">(</button></td>
+        <td><button onclick="popUp(')')">)</button></td>
+        <td><button onclick="popUp('%')">%</button></td>
+        <td><button onclick="res3t()">AC</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="popUp(7)">7</button></td>
+        <td><button onclick="popUp(8)">8</button></td>
+        <td><button onclick="popUp(9)">9</button></td>
+        <td><button onclick="popUp('/')">/</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="popUp(4)">4</button></td>
+        <td><button onclick="popUp(5)">5</button></td>
+        <td><button onclick="popUp(6)">6</button></td>
+        <td><button onclick="popUp('*')">X</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="popUp(1)">1</button></td>
+        <td><button onclick="popUp(2)">2</button></td>
+        <td><button onclick="popUp(3)">3</button></td>
+        <td><button onclick="popUp('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="popUp(0)">0</button></td>
+        <td><button onclick="popUp('.')">.</button></td>
+        <td><button onclick="calculate()">=</button></td>
+        <td><button onclick="popUp('+')">+</button></td>
+    </tr>
+</table>
+
+<script>
+function popUp(x){
+    document.getElementById('result').value += x;
+}
+
+function calculate(){
+    let equation = document.getElementById('result').value;
+    document.getElementById('result').value = eval(equation);
+}
+function res3t(){
+    document.getElementById('result').value = "";
+}
+</script>
+</body>
+</html>
