@@ -34,7 +34,7 @@
         </select></td>
         <td><button id="convert" onclick="convertCurrency()">Convert</button>
             <br>
-            <input type="reset" value="re-mthfk-set">
+            <button type="reset" onclick="res3t()">Re-mtfk-set</button>
         </td>
     </tr>
     <tr>
@@ -44,7 +44,6 @@
 
 
 <script>
-
     function convertCurrency() {
         let select1 = document.getElementById('select1').value;
         let select2 = document.getElementById('select2').value;
@@ -57,11 +56,12 @@
             money = parseInt(input) * 23000;
             document.getElementById('result').innerText = document.getElementById('result').innerText + ' ' + money + " VND";
         }
-
-
     }
 
-
+    function res3t() {
+        document.getElementById("number").value = " ";
+        document.getElementById('result').innerText = "Result: ";
+    }
 </script>
 </body>
 </html>
