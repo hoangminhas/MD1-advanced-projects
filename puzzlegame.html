@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle Game</title>
+</head>
+<body>
+<img id="img-1" class="puzz" src="image/img1/photo1_1.jpg" alt="no.1" width="1280" onclick="click1()">
+<img id="img-2" class="puzz" src="image/img1/photo1_2.jpg" alt="no.2" width="1280" onclick="click2()">
+<img id="img-3" class="puzz" src="image/img1/photo1_3.jpg" alt="no.3" width="1280" onclick="click3()">
+<img id="img-4" class="puzz" src="image/img1/photo1_4.jpg" alt="no.4" width="1280" onclick="click4()">
+
+<script>
+    let anh1 = document.getElementById('img-1');
+    let anh2 = document.getElementById('img-2');
+    let anh3 = document.getElementById('img-3');
+    let anh4 = document.getElementById('img-4');
+    let count1 = 0;
+    let count2 = 1;
+    let count3 = 2;
+    let count4 = 3;
+
+    function init() {
+
+        anh2.src = 'image/img2/photo2_2.jpg';
+        anh3.src = 'image/img3/photo3_3.jpg';
+    }
+    window.onload = init;
+
+    function click1() {
+       count1++;
+       if (count1 == 1) {
+           anh1.src = 'image/img2/photo2_1.jpg';
+       } else if (count1 == 2) {
+           anh1.src = 'image/img3/photo3_1.jpg';
+       } else {
+           count1 = 0;
+           anh1.src = 'image/img1/photo1_1.jpg';
+       }
+       checkPuzzle();
+    }
+
+    function click2(){
+        count2++;
+        if (count2 == 1) {
+            anh2.src = 'image/img2/photo2_2.jpg';
+        } else if (count2 == 2) {
+            anh2.src = 'image/img3/photo3_2.jpg';
+        } else {
+            count2 = 0;
+            anh2.src = 'image/img1/photo1_2.jpg';
+        }
+        checkPuzzle();
+    }
+
+    function click3() {
+        count3++;
+        if (count3 == 1) {
+            anh3.src = 'image/img2/photo2_3.jpg';
+        } else if (count3 == 2) {
+            anh3.src = 'image/img3/photo3_3.jpg';
+        } else {
+            count3 = 0;
+            anh3.src = 'image/img1/photo1_3.jpg';
+        }
+        checkPuzzle();
+    }
+
+    function click4() {
+        count4++;
+        if (count4 == 1) {
+            anh4.src = 'image/img2/photo2_4.jpg';
+        } else if (count4 == 2) {
+            anh4.src = 'image/img3/photo3_4.jpg';
+        } else {
+            count4 = 0;
+            anh4.src = 'image/img1/photo1_4.jpg';
+        }
+        checkPuzzle();
+    }
+
+    function checkPuzzle() {
+        if(count1 == count2 && count2 == count3 && count3 == count4) {
+            anh1.style.boxShadow = '#de3c22 4px 4px 9px';
+            anh2.style.boxShadow = '#de3c22 4px 4px 9px';
+            anh3.style.boxShadow = '#de3c22 4px 4px 9px';
+            anh4.style.boxShadow = '#de3c22 4px 4px 9px';
+        } else {
+            anh1.style.boxShadow = '#def 4px 4px 9px';
+            anh2.style.boxShadow = '#def 4px 4px 9px';
+            anh3.style.boxShadow = '#def 4px 4px 9px';
+            anh4.style.boxShadow = '#def 4px 4px 9px';
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <style>
         body{
             background-color: burlywood;
+            margin-bottom: 50px;
         }
 
         table{
@@ -36,6 +37,14 @@
         }
         tr:nth-child(odd) > td:nth-child(odd){
             background-color: azure;
+        }
+        #watch{
+            display: block;
+            margin: auto;
+            width: 10em;
+            height: 5em;
+            border-radius: 20%;
+            background-color: #b9d4ec;
         }
     </style>
 </head>
@@ -141,5 +150,8 @@
         <td></td>
     </tr>
 </table>
+<br>
+
+<button id="watch" onclick="this.innerHTML = Date()">Watch time!?</button>
 </body>
 </html>
